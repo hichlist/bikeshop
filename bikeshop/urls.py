@@ -18,7 +18,6 @@ from django.conf.urls import url, include
 from django.urls import path
 
 from main import views
-from products import views as vw
 
 
 urlpatterns = [
