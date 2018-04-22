@@ -12,7 +12,7 @@ html = r2.content
 soup = BeautifulSoup(html, 'html.parser')
 # print('-->', soup)
 text = soup.find_all('a', href=re.compile('^http'))
-# print(text)
+print(text)
 result = []
 for t in text:
     # result.append(t.get('href'))
