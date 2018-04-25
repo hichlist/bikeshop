@@ -1,5 +1,5 @@
 from django.contrib import admin
-from products.models import Bikes, BikeCategory
+from products.models import Bikes, BikeCategory, Images
 
 
 # class ImagesInline(admin.TabularInline):
@@ -10,11 +10,18 @@ from products.models import Bikes, BikeCategory
 
 
 @admin.register(Bikes)
-class FactAdmin(admin.ModelAdmin):
+class BikeAdmin(admin.ModelAdmin):
     # inlines = [ImagesInline]
-    list_display = ['bike_name', 'brand', 'price', 'biketype']
-    list_display_links = ['bike_name', 'brand']
-    list_filter = ['bike_name']
-    search_fields = ['description', 'bike_name', 'brand']
+    list_display = ['name', 'brand', 'price', 'category', 'show_img']
+    list_display_links = ['name', 'brand']
+    list_filter = ['name']
+    search_fields = ['description', 'name', 'brand']
 
 admin.site.register(BikeCategory)
+
+@admin.register(Images)
+class ImageAdmin(admin.ModelAdmin):
+    # inlines = [ImagesInline]
+    list_display = ['image']
+    list_display_links = ['image']
+
