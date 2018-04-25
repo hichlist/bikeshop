@@ -9,13 +9,15 @@
 <div class="bikes">		 
 	 <div class="mountain-sec">
 		 <h2>MOUNTAIN BIKES</h2>
-		 <a href="single.html"><div class="bike">				 
-			 <img src="{% static 'images/bik3.jpg' %}" alt=""/>
-		     <div class="bike-cost">
+		 {% for b in bike %}
+		 <a href="single.html">
+			 <div class="bike">
+				 <img src="{% static 'images/bik3.jpg' %}" alt=""/>
+				 <div class="bike-cost">
 					 <div class="bike-mdl">
-						 <h4>{{ bike.0.name }}<span>Model:{{ bike.0.model }}</span></h4>
+						 <h4>{{ b.name }}<span>Model:{{ b.model }}</span></h4>
 					 </div>
-					 <div class="bike-cart">						 
+					 <div class="bike-cart">
 						 <a class="buy" href="single.html">BUY NOW</a>
 					 </div>
 					 <div class="clearfix"></div>
@@ -23,7 +25,9 @@
 				 <div class="fast-viw">
 						<a href="single.html">Quick View</a>
 				 </div>
-			 </div></a>
+			 </div>
+		 </a>
+		 {% endfor %}
 			 <a href="single.html"><div class="bike">				 
 				 <img src="{% static 'images/bik1.jpg' %}" alt=""/>
 				 <div class="bike-cost">

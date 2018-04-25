@@ -6,7 +6,7 @@ from products.models import Bikes, BikeCategory, Images
 #     model = Bikes
 #     extra = 0
 #     fields = ('image', 'bike')
-#     fk_name = 'bike'
+#     readonly_fields = ('bike',)
 
 
 @admin.register(Bikes)
@@ -22,6 +22,6 @@ admin.site.register(BikeCategory)
 @admin.register(Images)
 class ImageAdmin(admin.ModelAdmin):
     # inlines = [ImagesInline]
-    list_display = ['image']
-    list_display_links = ['image']
+    list_display = ['image', 'bike']
+    list_display_links = ['bike']
 
