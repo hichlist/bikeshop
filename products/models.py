@@ -2,31 +2,39 @@ from django.db import models
 
 
 class BikeCategory(models.Model):
-    category = models.CharField("Category name", max_length=50, unique=True)
+    category = models.CharField(verbose_name="Category name", max_length=50)
 
     def __str__(self):
         return self.category
 
 
+class Images(models.Model):
+    # bike = models.ForeignKey(Bikes, verbose_name="Bike's name",
+    #                          on_delete=models.CASCADE)
+    image = models.ImageField("Bike's image", upload_to='media/bikes', null=True)
+
+
 # Create your models here.
 class Bikes(models.Model):
-    bike_name = models.CharField("Bike's name", max_length=30)
-    model = models.CharField("Model number", max_length=10)
-    price = models.CharField("Price", max_length=10)
+    name = models.CharField("bike's name", max_length=30)
+    model = models.CharField("model number", max_length=10)
+    price = models.CharField("price", max_length=10)
     size = models.CharField("frame size", max_length=5)
     biketype = models.CharField("bike type", max_length=30)
     brand = models.CharField("brand", max_length=30)
     description = models.TextField("description")
-    category = models.OneToOneField(BikeCategory, "category", unique=True)
+    category = models.ForeignKey(BikeCategory, verbose_name="category",
+                                 on_delete=models.CASCADE)
+    images = models.ForeignKey(Images, verbose_name="Images",
+                               on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Bike'
         verbose_name_plural = 'Bikes'
 
     def __str__(self):
-        return self.bike_name
+        return self.name
 
 
-class Images(models.Model):
-    bike_name = models.ForeignKey(Bikes, verbose_name="Bike's name")
-    image = models.ImageField("Bike's image")
+
+
