@@ -18,7 +18,6 @@ class Bikes(models.Model):
     description = models.TextField("description")
     category = models.ForeignKey(BikeCategory, verbose_name="category",
                                  on_delete=models.CASCADE)
-    # images = models.ManyToManyField(Images, verbose_name="Images")
 
     class Meta:
         verbose_name = 'Bike'
@@ -27,12 +26,16 @@ class Bikes(models.Model):
     def show_img(self):
         return r'<a herf="{0}"><img src="{0}" width="100"/></a>'
 
+    def get_images(self):
+        return Images.objects.filter(item=self)
+
     def __str__(self):
         return self.name
 
 
 class Images(models.Model):
     bike = models.ForeignKey(Bikes, verbose_name="Bike's name",
-                             on_delete=models.CASCADE)
+                             on_delete=models.CASCADE,
+                             related_name='bikes_images')
     image = models.ImageField("Bike's image", upload_to='bikes',
                               null=True)
