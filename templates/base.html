@@ -81,12 +81,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="{% url 'bicycles' %}">PREMIMUN SERIES</a></li>
 							  </ul>
 						  </li>
-						  <li class="dropdown1"><a href="parts.html">PARTS</a>
+						  <li class="dropdown1"><a href="{% url 'parts' %}">PARTS</a>
 							 <ul class="dropdown2">
-									<li><a href="">CHAINS</a></li>
-									<li><a href="parts.html">TUBES</a></li>
-									<li><a href="parts.html">TIRES</a></li>
-									<li><a href="parts.html">DISC BREAKS</a></li>
+									<li><a href="{% url 'parts' %}">TUBES</a></li>
+									<li><a href="{% url 'parts' %}">CHAINS</a></li>
+									<li><a href="{% url 'parts' %}">TUBES</a></li>
+									<li><a href="{% url 'parts' %}">TIRES</a></li>
+									<li><a href="{% url 'parts' %}">DISC BREAKS</a></li>
 							  </ul>
 						 </li>
 						 <li class="dropdown1"><a href="accessories.html">ACCESSORIES</a>
@@ -128,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="ftr-menu">
 			 <ul>
 				 <li><a href="{% url 'bicycles' %}">BICYCLES</a></li>
-				 <li><a href="parts.html">PARTS</a></li>
+				 <li><a href="{% url 'parts' %}">PARTS</a></li>
 				 <li><a href="accessories.html">ACCESSORIES</a></li>
 				 <li><a href="404.html">EXTRAS</a></li>
 			 </ul>

@@ -1374,7 +1374,7 @@ a.add-cart {
 }
 @media (max-width: 1024px){
 .banner-bg1{
-  min-height: 570px;
+  min-height: 500px;
 }
 .banner-sec {
   min-height: 146px;

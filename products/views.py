@@ -11,3 +11,11 @@ def bicycles(request):
 def item_card(request, id):
     bike = Bikes.objects.get(id=id)
     return render(request, 'single.html', {'bike': bike})
+
+
+def parts(request):
+    return render(request, 'parts.html')
+
+
+def accessories(request):
+    return render(request, 'accessories.html')
