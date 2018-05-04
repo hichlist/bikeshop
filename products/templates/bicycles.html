@@ -7,27 +7,32 @@
 {% block content %}
 
 <div class="bikes">		 
-	 <div class="mountain-sec">
+	 <div id="mountain" class="mountain-sec">
 		 <h2>MOUNTAIN BIKES</h2>
-		 {% for b in bikes %}
+		 {% for bike in bikes %}
 		 <a href="single.html">
 			 <div class="bike">
-				 <img src="{{ images.image.0.url }}" alt=""/>
+				 <img src="{{ bike.bikes_images.image.url }}" alt=""/>
 				 <div class="bike-cost">
 					 <div class="bike-mdl">
-						 <h4>{{ b.name }}<span>Model:{{ b.model }}</span></h4>
+						 <h4>{{ bike.name }}<span>Model:{{ bike.model }}</span></h4>
 					 </div>
 					 <div class="bike-cart">
-						 <a class="buy" href="/bicycles/{{ b.id }}">BUY NOW</a>
+						 <a class="buy" href="/bicycles/{{ bike.id }}">BUY NOW</a>
 					 </div>
 					 <div class="clearfix"></div>
 				 </div>
 				 <div class="fast-viw">
-						<a href="/bicycles/{{ b.id }}">Quick View</a>
+						<a href="/bicycles/{{ bike.id }}">Quick View</a>
 				 </div>
 			 </div>
 		 </a>
 		 {% endfor %}
+
+		 {% for img in images %}
+		 <img src="{{img}}" alt=""/>
+		 {% endfor %}
+
 			 <a href="single.html"><div class="bike">				 
 				 <img src="{% static 'images/bik1.jpg' %}" alt=""/>
 				 <div class="bike-cost">
@@ -76,8 +81,8 @@
 			 <div class="clearfix"></div>
 	  </div>
 		 
-	  <div class="singlespeed-sec">
-		   <h2>SINGLE SPEED-BIKES</h2>
+	  <div id="single" class="singlespeed-sec">
+		   <h2 >SINGLE SPEED-BIKES</h2>
 			 <a href="single.html"><div class="bike">				 
 				 <img src="{% static 'images/s1.jpg' %}" alt=""/>
 				 <div class="bike-cost">
@@ -141,8 +146,8 @@
 			 <div class="clearfix"></div>
 		 </div>
 		 
-		 <div class="road-sec">
-		   <h2>ROAD-BIKES</h2>
+		 <div id="road" class="road-sec">
+		   <h2 >ROAD-BIKES</h2>
 			 <a href="single.html"><div class="bike">				 
 				 <img src="{% static 'images/r1.jpg' %}" alt=""/>
 				 <div class="bike-cost">

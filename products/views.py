@@ -4,13 +4,14 @@ from products.models import Bikes, Images
 
 def bicycles(request):
     bikes = Bikes.objects.all()
-    images = Images.objects.all()
-    return render(request, "bicycles.html", {'bikes': bikes, 'images': images})
+    return render(request, "bicycles.html", {'bikes': bikes})
 
 
 def item_card(request, id):
     bike = Bikes.objects.get(id=id)
-    return render(request, 'single.html', {'bike': bike})
+    images = Images.objects.filter(id=id)
+    print(images)
+    return render(request, 'single.html', {'bike': bike, 'images': images})
 
 
 def parts(request):

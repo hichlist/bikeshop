@@ -76,9 +76,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					   <ul class="nav">
 						  <li class="dropdown1"><a href="{% url 'bicycles' %}">BICYCLES</a>
 							  <ul class="dropdown2">
-									<li><a href="{% url 'bicycles' %}">FIXED / SINGLE SPEED</a></li>
-									<li><a href="{% url 'bicycles' %}">CITY BIKES</a></li>
-									<li><a href="{% url 'bicycles' %}">PREMIMUN SERIES</a></li>
+									<li><a href="{% url 'bicycles' %}#mountain">FIXED / SINGLE SPEED</a></li>
+									<li><a href="{% url 'bicycles' %}#single">CITY BIKES</a></li>
+									<li><a href="{% url 'bicycles' %}#road">PREMIMUN SERIES</a></li>
 							  </ul>
 						  </li>
 						  <li class="dropdown1"><a href="{% url 'parts' %}">PARTS</a>
@@ -90,12 +90,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="{% url 'parts' %}">DISC BREAKS</a></li>
 							  </ul>
 						 </li>
-						 <li class="dropdown1"><a href="accessories.html">ACCESSORIES</a>
+						 <li class="dropdown1"><a href="{% url 'accessories' %}">ACCESSORIES</a>
 							 <ul class="dropdown2">
-									<li><a href="accessories.html">LOCKS</a></li>
-										<li><a href="accessories.html">HELMETS</a></li>
-										<li><a href="accessories.html">ARM COVERS</a></li>
-										<li><a href="accessories.html">JERSEYS</a></li>
+									<li><a href="{% url 'accessories' %}">LOCKS</a></li>
+										<li><a href="{% url 'accessories' %}">HELMETS</a></li>
+										<li><a href="{% url 'accessories' %}">ARM COVERS</a></li>
+										<li><a href="{% url 'accessories' %}">JERSEYS</a></li>
 							  </ul>
 						 </li>
 						 <li class="dropdown1"><a href="404.html">EXTRAS</a>
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 <ul>
 				 <li><a href="{% url 'bicycles' %}">BICYCLES</a></li>
 				 <li><a href="{% url 'parts' %}">PARTS</a></li>
-				 <li><a href="accessories.html">ACCESSORIES</a></li>
+				 <li><a href="{% url 'accessories' %}">ACCESSORIES</a></li>
 				 <li><a href="404.html">EXTRAS</a></li>
 			 </ul>
 		</div>
