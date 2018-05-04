@@ -1,4 +1,5 @@
 from django.shortcuts import render
 
-def shoppingbag(request):
+
+def cart(request):
     return render(request, 'cart.html')
