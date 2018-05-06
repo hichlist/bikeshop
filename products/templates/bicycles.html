@@ -12,7 +12,11 @@
 		 {% for bike in bikes %}
 		 <a href="single.html">
 			 <div class="bike">
-				 <img src="{{ bike.bikes_images.image.url }}" alt=""/>
+				 {% for i in bike.product_images.all %}
+				 {% if forloop.first %}
+				 <img src="{{ i.image.url }}" alt=""/>
+				 {% endif %}
+				 {% endfor %}
 				 <div class="bike-cost">
 					 <div class="bike-mdl">
 						 <h4>{{ bike.name }}<span>Model:{{ bike.model }}</span></h4>
@@ -28,56 +32,7 @@
 			 </div>
 		 </a>
 		 {% endfor %}
-
-		 {% for img in images %}
-		 <img src="{{img}}" alt=""/>
-		 {% endfor %}
-
-			 <a href="single.html"><div class="bike">				 
-				 <img src="{% static 'images/bik1.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none2">				 
-				 <img src="{% static 'images/bik4.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none1">				 
-				 <img src="{% static 'images/bik6.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
+		 
 			 <div class="clearfix"></div>
 	  </div>
 		 
