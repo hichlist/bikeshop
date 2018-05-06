@@ -26,7 +26,7 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^$', views.main, name='main'),
     url(r'^bicycles/', include('products.urls')),
-    url(r'^shoppingbag/', include('shoppingbag.urls')),
+    url(r'^cart/', include('cart.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,6 +1,6 @@
 from django.db import models
-from products.models import Bikes
+from products.models import Products
 
 
 # class Cart(models.Model):
-#     product = models.ForeignKey(Bikes, )
+#     product = models.ForeignKey(Products, )
