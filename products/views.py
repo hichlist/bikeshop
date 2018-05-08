@@ -1,14 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from products.models import Products, Images
 
 
 def bicycles(request):
-    bikes = Products.objects.all()
-    return render(request, "bicycles.html", {'bikes': bikes})
+    context = dict()
+    context['mountain'] = Products.objects.filter(category__category='MOUNTAIN BIKES')
+    context['single'] = Products.objects.filter(category__category='SINGLE SPEED-BIKES')
+    context['road'] = Products.objects.filter(category__category='ROAD-BIKES')
+    return render(request, "bicycles.html", context)
 
 
 def item_card(request, id):
-    product = Products.objects.get(id=id)
+    product = get_object_or_404(Products, id=id)
     images = Images.objects.filter(id=id)
     print(images)
     return render(request, 'single.html', {'product': product, 'images': images})

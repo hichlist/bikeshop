@@ -44,8 +44,8 @@
 							<!--</li>-->
 							  {% for p in product.product_images.all %}
 								<li>
-									<img class="etalage_thumb_image" src="{{ p.image.url }}" class="img-responsive" />
-									<img class="etalage_source_image" src="{{ p.image.url }}" class="img-responsive" />
+									<img class="etalage_thumb_image" src="{{ p.image.url }}" />
+									<img class="etalage_source_image" src="{{ p.image.url }}" />
 								</li>
 							  {% endfor %}
 							<!--<li>-->
@@ -78,7 +78,7 @@
 							</div>
 							<h5>Description  ::</h5>
 						 <p class="desc">
-							 {{ bike.description }}
+							 {{ product.description }}
 						 </p>
 					 </div>
 					 <div class="clearfix"></div>				 	
