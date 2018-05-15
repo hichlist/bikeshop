@@ -22,18 +22,20 @@
 						<!--});	  -->
 					<!--});-->
 			   <!--</script>-->
-			 {% for product in products %}
+			 {% for item in products %}
 			 <div class="cart-header">
-				 <div class="close1"> </div>
+				 <a href="/cart/?remove={{ item.id }}">
+					 <div class="close1"> </div>
+				 </a>
 				 <div class="cart-sec">
 						<div class="cart-item cyc">
 							 <img src="images/bik6.jpg"/>
 						</div>
 					   <div class="cart-item-info">
-							 <h3>{{ product.product.name }}<span>Model No: {{ product.product.model }}</span></h3>
-							 <h4><span>Rs. $ </span>{{ product.product.price }}</h4>
+							 <h3>{{ item.product.name }}<span>Model No: {{ item.product.model }}</span></h3>
+							 <h4><span>Rs. $ </span>{{ item.product.price }}</h4>
 							 <p class="qty">Qty ::</p>
-							 <input min="1" type="number" id="quantity" name="quantity" value="{{ product.quantity }}" class="form-control input-small">
+							 <input min="1" type="number" id="quantity" name="quantity" value="{{ item.quantity }}" class="form-control input-small">
 					   </div>
 					   <div class="clearfix"></div>
 						<div class="delivery">
