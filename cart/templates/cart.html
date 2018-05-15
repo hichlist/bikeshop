@@ -14,14 +14,15 @@
 			
 		 <div class="col-md-9 cart-items">
 			 <h2>My Shopping Bag (2)</h2>
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
+				<!--<script>$(document).ready(function(c) {-->
+					<!--$('.close1').on('click', function(c){-->
+						<!--$('.cart-header').fadeOut('slow', function(c){-->
+							<!--$('.cart-header').remove();-->
+						<!--});-->
+						<!--});	  -->
+					<!--});-->
+			   <!--</script>-->
+			 {% for product in products %}
 			 <div class="cart-header">
 				 <div class="close1"> </div>
 				 <div class="cart-sec">
@@ -29,10 +30,10 @@
 							 <img src="images/bik6.jpg"/>
 						</div>
 					   <div class="cart-item-info">
-							 <h3>MOUNTAIN HOPPER(XS R034)<span>Model No: 3578</span></h3>
-							 <h4><span>Rs. $ </span>5800.00</h4>
+							 <h3>{{ product.product.name }}<span>Model No: {{ product.product.model }}</span></h3>
+							 <h4><span>Rs. $ </span>{{ product.product.price }}</h4>
 							 <p class="qty">Qty ::</p>
-							 <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+							 <input min="1" type="number" id="quantity" name="quantity" value="{{ product.quantity }}" class="form-control input-small">
 					   </div>
 					   <div class="clearfix"></div>
 						<div class="delivery">
@@ -42,34 +43,8 @@
 				        </div>						
 				  </div>
 			 </div>
-			 <script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-							$('.cart-header2').fadeOut('slow', function(c){
-						$('.cart-header2').remove();
-					});
-					});	  
-					});
-			 </script>
-			 <div class="cart-header2">
-				 <div class="close2"> </div>
-				  <div class="cart-sec">
-						<div class="cart-item">
-							 <img src="images/a3.png"/>
-						</div>
-					   <div class="cart-item-info">
-							 <h3>RIDE HELMET<span>Model No: 8768</span></h3>
-							 <h4><span>Rs. $ </span>200.00</h4>
-							 <p class="qty">Qty ::</p>
-							 <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
-					   </div>
-					   <div class="clearfix"></div>
-						<div class="delivery">
-							 <p>Service Charges:: Rs.100.00</p>
-							 <span>Delivered in 2-3 bussiness days</span>
-							 <div class="clearfix"></div>
-				        </div>						
-				  </div>
-			  </div>		
+			 {% endfor %}
+
 		 </div>
 		 
 		 <div class="col-md-3 cart-total">

@@ -1,4 +1,7 @@
+import requests
+
 from django.shortcuts import render, get_object_or_404
+from cart.models import Cart
 from products.models import Products, Images
 
 
@@ -17,6 +20,11 @@ def item_card(request, id):
     context = dict()
     context['product'] = get_object_or_404(Products, id=id)
     context['images'] = Images.objects.filter(id=id)
+
+    if request.method == 'POST':
+
+        Cart.objects.create(product=context['product'], user_id=1, quantity=1)
+
     return render(request, 'single.html', context)
 
 
