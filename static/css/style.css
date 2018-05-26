@@ -1936,7 +1936,7 @@ select {
 .bike-cart a.buy {
   padding: 0.5em 2em;
 }
-.mountain-sec, .singlespeed-sec {
+.mountain-sec, .singlespeed-sec .road-sec {
   padding: 0 0em 2em 0em;
 }
 .bike-mdl h4 span{

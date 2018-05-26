@@ -29,7 +29,10 @@ def item_card(request, id):
 
 
 def parts(request):
-    return render(request, 'parts.html')
+    context = dict()
+    context['accessories'] = Products.objects.filter(
+        category__category='ACCESSORIES')
+    return render(request, 'parts.html', context)
 
 
 def accessories(request):

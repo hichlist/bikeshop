@@ -4,6 +4,10 @@ from django.db import models
 class ProductCategory(models.Model):
     category = models.CharField(verbose_name="Category name", max_length=50)
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         return self.category
 
@@ -20,11 +24,11 @@ class Products(models.Model):
                                  on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = 'Bike'
+        verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
     def show_img(self):
-        return r'<a herf="{0}"><img src="{0}" width="100"/></a>'
+        return '<a herf="{0}"><img src="{0}" width="100"/></a>'
 
     def get_images(self):
         return Images.objects.filter(item=self)

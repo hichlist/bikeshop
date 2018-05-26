@@ -1,25 +1,21 @@
 from bs4 import BeautifulSoup
 import re
-import urllib.request
+import pdfcrowd
 import requests
 import yaml2json
 
 
 def parser():
-    test_html = ' <p class="biglink"><a class="biglink" href="using/index.html">Python Setup and Usage</a><br/></p>'
-    # r = urllib.request.urlopen('https://yandex.ru')
-    r2 = requests.get('https://djbook.ru/rel1.9/intro/overview.html')
-    # print(r.read())
-    # print(r2.content)
+    r2 = requests.get('https://djbook.ru/rel1.9/')
     html = r2.content
     soup = BeautifulSoup(html, 'html.parser')
     # print('-->', soup)
-    text = soup.find_all('a', href=re.compile('^http'))
-    # print(text)
+    text = soup.find_all('a', class_="reference internal")  #, href=re.compile('^http'))
+    # print('-', text)
     result = []
     for t in text:
         # result.append(t.get('href'))
-        print(t.get('href'))
+        print('https://djbook.ru/rel1.9/{},'.format(t.get('href')))
     # print('--->', result)
 
 
