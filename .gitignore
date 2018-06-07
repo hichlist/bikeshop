@@ -1,0 +1,5 @@
+*.pyc
+*.sqlite
+.idea/
+__pycache__/
+bike/

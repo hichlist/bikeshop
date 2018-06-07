@@ -15,6 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <!-- Custom Theme files -->
 <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/form.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -76,9 +77,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					   <ul class="nav">
 						  <li class="dropdown1"><a href="{% url 'bicycles' %}">BICYCLES</a>
 							  <ul class="dropdown2">
-									<li><a href="{% url 'bicycles' %}#mountain">FIXED / SINGLE SPEED</a></li>
-									<li><a href="{% url 'bicycles' %}#single">CITY BIKES</a></li>
-									<li><a href="{% url 'bicycles' %}#road">PREMIMUN SERIES</a></li>
+									<li><a href="{% url 'bicycles' %}#mountain">MOUNTAIN BIKES</a></li>
+									<li><a href="{% url 'bicycles' %}#single">SINGLE-SPEED BIKES</a></li>
+									<li><a href="{% url 'bicycles' %}#road">ROAD BIKES</a></li>
 							  </ul>
 						  </li>
 						  <li class="dropdown1"><a href="{% url 'parts' %}">PARTS</a>
@@ -105,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="404.html">TRUCK GRIP</a></li>
 							  </ul>
 						 </li>
-						  <a class="shop" href="{% url 'shoppingbag' %}"><img src="{% static 'images/cart.png' %}" alt=""/></a>
+						  <a class="shop" href="{% url 'cart' %}"><img src="{% static 'images/cart.png' %}" alt=""/></a>
 					  </ul>
 				 </div>
 				 <div class="clearfix"></div>

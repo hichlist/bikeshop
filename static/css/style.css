@@ -31,7 +31,7 @@ padding:0;
 .banner-bg1{
 	background:url(../images/bg.jpg) no-repeat;
 	background-size:cover;
-	min-height:835px;
+	min-height:715px;
 }
 .banner-bg2 {
 	background:url(../images/bg2.jpg) no-repeat;
@@ -950,6 +950,26 @@ margin-top:2em;
 	transition: all 0.3s ease-in-out;
 }
 .btn_form a:hover{
+	background:transparent;
+	border:1px solid #000;
+	color:#000;
+}
+.btn_form_button {
+	border: none;
+	outline: none;
+	display: inline-block;
+	font-size: 1em;
+	padding: 10px 34px;
+	background:rgb(150, 150, 150);
+	border:1px solid rgb(150, 150, 150);
+	color: #fff;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.btn_form_button:hover{
 	background:transparent;
 	border:1px solid #000;
 	color:#000;
@@ -1916,7 +1936,7 @@ select {
 .bike-cart a.buy {
   padding: 0.5em 2em;
 }
-.mountain-sec, .singlespeed-sec {
+.mountain-sec, .singlespeed-sec .road-sec {
   padding: 0 0em 2em 0em;
 }
 .bike-mdl h4 span{

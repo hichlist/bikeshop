@@ -1,21 +1,38 @@
-from django.shortcuts import render
-from products.models import Bikes, Images
+import requests
+
+from django.shortcuts import render, get_object_or_404
+from cart.models import Cart
+from products.models import Products, Images
 
 
 def bicycles(request):
-    bikes = Bikes.objects.all()
-    return render(request, "bicycles.html", {'bikes': bikes})
+    context = dict()
+    context['mountain'] = Products.objects.filter(
+        category__category='MOUNTAIN BIKES')
+    context['single'] = Products.objects.filter(
+        category__category='SINGLE SPEED-BIKES')
+    context['road'] = Products.objects.filter(
+        category__category='ROAD-BIKES')
+    return render(request, "bicycles.html", context)
 
 
 def item_card(request, id):
-    bike = Bikes.objects.get(id=id)
-    images = Images.objects.filter(id=id)
-    print(images)
-    return render(request, 'single.html', {'bike': bike, 'images': images})
+    context = dict()
+    context['product'] = get_object_or_404(Products, id=id)
+    context['images'] = Images.objects.filter(id=id)
+
+    if request.method == 'POST':
+
+        Cart.objects.create(product=context['product'], user_id=1, quantity=1)
+
+    return render(request, 'single.html', context)
 
 
 def parts(request):
-    return render(request, 'parts.html')
+    context = dict()
+    context['accessories'] = Products.objects.filter(
+        category__category='ACCESSORIES')
+    return render(request, 'parts.html', context)
 
 
 def accessories(request):

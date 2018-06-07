@@ -9,10 +9,14 @@
 <div class="bikes">		 
 	 <div id="mountain" class="mountain-sec">
 		 <h2>MOUNTAIN BIKES</h2>
-		 {% for bike in bikes %}
-		 <a href="single.html">
+		 {% for bike in mountain %}
+		 <a href="/bicycles/{{ bike.id }}">
 			 <div class="bike">
-				 <img src="{{ bike.bikes_images.image.url }}" alt=""/>
+				 {% for i in bike.product_images.all %}
+				 {% if forloop.first %}
+				 <img src="{{ i.image.url }}" alt=""/>
+				 {% endif %}
+				 {% endfor %}
 				 <div class="bike-cost">
 					 <div class="bike-mdl">
 						 <h4>{{ bike.name }}<span>Model:{{ bike.model }}</span></h4>
@@ -29,185 +33,64 @@
 		 </a>
 		 {% endfor %}
 
-		 {% for img in images %}
-		 <img src="{{img}}" alt=""/>
-		 {% endfor %}
-
-			 <a href="single.html"><div class="bike">				 
-				 <img src="{% static 'images/bik1.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none2">				 
-				 <img src="{% static 'images/bik4.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none1">				 
-				 <img src="{% static 'images/bik6.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
 			 <div class="clearfix"></div>
 	  </div>
 		 
 	  <div id="single" class="singlespeed-sec">
 		   <h2 >SINGLE SPEED-BIKES</h2>
-			 <a href="single.html"><div class="bike">				 
-				 <img src="{% static 'images/s1.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
+			 {% for bike in single %}
+			 <a href="/bicycles/{{ bike.id }}">
+				 <div class="bike">
+					 {% for i in bike.product_images.all %}
+					 {% if forloop.first %}
+					 <img src="{{ i.image.url }}" alt=""/>
+					 {% endif %}
+					 {% endfor %}
+					 <div class="bike-cost">
+						 <div class="bike-mdl">
+							 <h4>{{ bike.name }}<span>Model:{{ bike.model }}</span></h4>
+						 </div>
+						 <div class="bike-cart">
+							 <a class="buy" href="/bicycles/{{ bike.id }}">BUY NOW</a>
+						 </div>
+						 <div class="clearfix"></div>
 					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
+					 <div class="fast-viw">
+							<a href="/bicycles/{{ bike.id }}">Quick View</a>
 					 </div>
-					 <div class="clearfix"></div>
 				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike">				 
-				 <img src="{% static 'images/s2.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none2">				 
-				 <img src="{% static 'images/s3.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none1">				 
-				 <img src="{% static 'images/s4.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
+			 </a>
+		 {% endfor %}
+
 			 <div class="clearfix"></div>
 		 </div>
 		 
 		 <div id="road" class="road-sec">
 		   <h2 >ROAD-BIKES</h2>
-			 <a href="single.html"><div class="bike">				 
-				 <img src="{% static 'images/r1.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
+			 {% for bike in road %}
+			 <a href="/bicycles/{{ bike.id }}">
+				 <div class="bike">
+					 {% for i in bike.product_images.all %}
+					 {% if forloop.first %}
+					 <img src="{{ i.image.url }}" alt=""/>
+					 {% endif %}
+					 {% endfor %}
+					 <div class="bike-cost">
+						 <div class="bike-mdl">
+							 <h4>{{ bike.name }}<span>Model:{{ bike.model }}</span></h4>
+						 </div>
+						 <div class="bike-cart">
+							 <a class="buy" href="/bicycles/{{ bike.id }}">BUY NOW</a>
+						 </div>
+						 <div class="clearfix"></div>
 					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
+					 <div class="fast-viw">
+							<a href="/bicycles/{{ bike.id }}">Quick View</a>
 					 </div>
-					 <div class="clearfix"></div>
 				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike">				 
-				 <img src="{% static 'images/r3.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none2">				 
-				 <img src="{% static 'images/r2.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
-			 <a href="single.html"><div class="bike none1">				 
-				 <img src="{% static 'images/r4.jpg' %}" alt=""/>
-				 <div class="bike-cost">
-					 <div class="bike-mdl">
-						 <h4>NAME<span>Model:M4585</span></h4>
-					 </div>
-					 <div class="bike-cart">						 
-						 <a class="buy" href="single.html">BUY NOW</a>
-					 </div>
-					 <div class="clearfix"></div>
-				 </div>
-				 <div class="fast-viw">
-						<a href="single.html">Quick View</a>
-				 </div>
-			 </div></a>
+			 </a>
+		 {% endfor %}
+
 			 <div class="clearfix"></div>
 		 </div>
 		 
