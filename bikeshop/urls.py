@@ -19,12 +19,19 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 # from django.urls import path
 
+from rest_framework import routers
+
 from main import views
 
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'group', views.GroupViewSet)
 
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^$', views.main, name='main'),
+    # url(r'^api/', include(routers.BaseRouter.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^bicycles/', include('products.urls')),
     url(r'^cart/', include('cart.urls')),
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main',
     'products',
     'cart',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Rest framework
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ],
+    'PAGE_SIZE': 10
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
