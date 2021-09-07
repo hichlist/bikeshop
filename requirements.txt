@@ -7,7 +7,7 @@ idna==2.5
 lxml==4.1.1
 olefile==0.46
 pep8==1.7.0
-Pillow==4.2.1
+Pillow==8.3.2
 py==1.8.0
 pytest==3.2.3
 pytest-base-url==1.4.1
